@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+
+    <style>
+        .contact-form label {display: block; font-weight: 700;font-size:17px;padding: 10px 0;}
+        .contact-form input {font-size: 18px;padding: 5px;}
+        .contact-form textarea {font-size: 18px;}
+        .contact-form #submit {display: block;background-color: #eee; border: 1px solid #ddd; color: #333; font-size: 1em; padding: 10px 15px;}
+        .contact-form #submit:hover {background-color: #ddd;cursor: pointer;}
+        .contact-form .confirmation {background: #e0ffc7; border: 1px solid #b4d39b; box-sizing: border-box;color: #333; margin: 0 auto 20px; padding: 10px 10px;}
+    </style>
+
+
+  </head>
+  <body>
+    <div class="contact-form">
+      <form action="/contact-us" id="contact">
+        <noscript class="error-noscript"
+          >Please enable JavaScript in your browser to complete this
+          form.</noscript
+        >
+        <div class="form-fields">
+          <label for="name">Name</label>
+          <input type="text" placeholder="Your name..." id="name" name="name" />
+          <label for="email">Email <span style="color: red">*</span></label>
+          <input
+            type="text"
+            placeholder="Your Emails..."
+            id="email"
+            name="email"
+            required
+          />
+          <label for="message"
+            >Comment or Message <span style="color: red">*</span></label
+          >
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+          <input id="submit" type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+
+    <script>
+      let form = document.getElementById('contact');
+      let form_fields = form.querySelector('.form-fields');
+      form.onsubmit = function (e) {
+        e = e || window.event;
+        e.preventDefault();
+        form_fields.innerHTML = '<div class="confirmation"><p>Thanks for contacting us! We will be in touch with you shortly.</p></div>';
+      };
+    </script>
+  </body>
+</html>

@@ -45,13 +45,13 @@
     </div>
 
     <script>
-      let form = document.getElementById('contact');
-      let form_fields = form.querySelector('.form-fields');
-      form.onsubmit = function (e) {
-        e = e || window.event;
-        e.preventDefault();
-        form_fields.innerHTML = '<div class="confirmation"><p>Thanks for contacting us! We will be in touch with you shortly.</p></div>';
-      };
-    </script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+          document.getElementById('contact').addEventListener("submit", function(e) {
+              e.preventDefault();
+              let form_fields = document.querySelector('#contact .form-fields');
+              form_fields.innerHTML = '<div class="confirmation"><p>Thanks for contacting us! We will be in touch with you shortly.</p></div>';
+          });
+      });
+  </script>
   </body>
 </html>

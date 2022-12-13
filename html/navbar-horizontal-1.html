@@ -5,14 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NavBar</title>
-
-    <script>
-
-    </script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .navbar {
+            box-shadow: 15px -4px 20px 7px #888888;
+            padding: 10px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: black;
+        }
+        .navbar, .navbar .menu {
+            display: flex;
+            justify-content: space-between;
+        }
+        #logo a {
+            font-weight: 700;
+            background: linear-gradient(to right, #30CFD0 0%, #330867 100%);           
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .navbar .menu-item {
+            margin-right: 20px;
+        }
+    </style>
 
 </head>
 <body>
     
+    <nav class="navbar">
+        <div id="logo"><a href="/">Website</a></div>
+        <div class="menu">
+            <div class="menu-item"><a href="#">Contact Us</a></div>
+            <div class="menu-item"><a href="#">About Us</a></div>
+            <div class="menu-item"><a href="#">Privacy Policy</a></div>
+        </div>
+    </nav>
     
 
     <script>

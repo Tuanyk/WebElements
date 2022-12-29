@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        
+        main {
+            font-family: 'Lexend Deca', sans-serif;
+            display: grid;
+            grid-template-columns: 300px minmax(300px, 800px) 300px;
+            gap: 12px;
+        }
+
+        main img {
+            width: 100%;
+            height: auto;
+        }
+        .center {
+            text-align: center;
+        }
+        .box {
+            padding: 24px 12px;
+            margin-bottom: 16px;
+            border-radius: 12px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgb(0 0 0 / 4%) 0px 4px 5px 0px, rgb(0 0 0 / 2%) 0px 3px 14px 3px, rgb(0 0 0 / 1%) 0px 8px 10px 1px;
+        }
+        a.button-primary {
+            text-decoration: none;
+            background-color: #0080ff;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 12px;
+        }
+        a.button-primary:hover {
+            background-color: #0075ea;
+        }
+        p.desc {
+            color: #7a7a7a;
+            margin: 0 0 20px 0;
+        }
+        p.main-description {
+            color: #222;
+            font-weight: 200;
+        }
+        .box h2 {
+            color: #323232;
+            margin: 10px 0;
+            text-align: center;
+        }
+        h2.section-title {
+            color: #323232;
+        }
+        ul.related {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        ul.related .item {
+            margin-right: 20px;
+            padding: 5px 10px;
+            background-color: orange;
+            border-radius: 12px;
+        }
+        ul.related .item:hover {
+            background-color: orangered;
+        }
+        ul.related a {
+            text-decoration: none;
+            color: #454545;
+        }
+        .result-wrap {
+            background-color: #F4F4F4;
+            border-radius: 12px;
+            margin-top: 20px;
+            padding: 10px 20px;
+        }
+        ul.result {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul.result .item {
+            padding: 10px 12px;
+            margin-bottom: 16px;
+            border-radius: 12px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgb(0 0 0 / 4%) 0px 4px 5px 0px, rgb(0 0 0 / 2%) 0px 3px 14px 3px, rgb(0 0 0 / 1%) 0px 8px 10px 1px;
+        }
+        ul.result .item:hover {
+            background-color: #f8f8f8;
+        }
+        ul.result p {
+            color: #454545;
+        }
+
+        ul.result .sentence-id {
+            color: #979797;
+        }
+        ul.result .info {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 10px;
+            border-top: 1px solid #bababa;
+        }
+        ul.result .left img {            
+            width: 15px;
+
+        }
+        ul.result .sentence-source {
+            text-decoration: none;
+            color: #545454;
+            font-size: 14px;
+            color: #0075ea;
+        }
+        ul.result .sentence-source:hover {
+            text-decoration: underline;
+        }
+        ul.result .left span {
+            margin-right: 5px;
+        }
+        .articles {
+            display: flex;
+            flex-direction: column;
+        }
+        article.item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        article.item .thumb {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+        }
+        article.item .post-info {
+            box-sizing: border-box;
+            width: calc(100% - 80px);
+            padding-top: 10px;
+            padding-left: 20px;
+        }
+        article.item h3 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        article.item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+  </head>
+  <body>
+    <main>
+        <section class="left-sidebar">
+            <div class="introduction box">
+                <h2>Hello, this is Leo</h2>
+                <img src="/images/img1.png" alt="">
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate itaque alias maiores ab mollitia iusto laudantium saepe repudiandae impedit at, eum ipsam est ipsum porro assumenda harum cumque. Aliquid, quas!</p>
+                <div class="center">
+                    <a class="button-primary" href="#">Read More</a>
+                </div>
+            </div>
+            <div class="articles">
+                <h2 class="section-title">Articles</h2>
+                <article class="item">
+                    <div class="thumb">
+                        <img src="/images/img4.png" alt="">
+                    </div>
+                    <div class="post-info">
+                        <h3 class="article-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    </h3>
+                </article>
+                <article class="item">
+                    <div class="thumb">
+                        <img src="/images/img4.png" alt="">
+                    </div>
+                    <div class="post-info">
+                        <h3 class="article-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    </h3>
+                </article>
+                <article class="item">
+                    <div class="thumb">
+                        <img src="/images/img4.png" alt="">
+                    </div>
+                    <div class="post-info">
+                        <h3 class="article-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    </h3>
+                </article>
+                <article class="item">
+                    <div class="thumb">
+                        <img src="/images/img4.png" alt="">
+                    </div>
+                    <div class="post-info">
+                        <h3 class="article-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    </h3>
+                </article>
+            </div>
+        </section>
+        <section class="main">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+            <p class="main-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, excepturi cupiditate ipsam veritatis repellat laudantium possimus voluptate ducimus in dolore necessitatibus odit adipisci, incidunt labore doloremque, atque deleniti earum quia!</p>
+            <div class="related">
+                <h2>Related</h2>
+                <ul class="related">
+                    <li class="item"><a href="#">Keyword</a></li>
+                    <li class="item"><a href="#">Related</a></li>
+                    <li class="item"><a href="#">Here</a></li>
+                </ul>
+            </div>
+            <div class="result-wrap">
+                <h2>Match</h2>
+                <ul class="result">
+                    <li class="item">
+                        <div class="sentence">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="info">
+                            <div class="left">
+                                <span class="sentence-id">1</span>
+                                <span class="text-to-speech">
+                                    <img src="/images/text-to-speech.svg" alt="">
+                                </span>
+                                <span class="save-sentence">
+                                    <img src="/images/save.svg" alt="">
+                                </span>
+                                <span class="like">
+                                    <img src="/images/like.svg" alt="">
+                                </span>
+                                <span class="share">
+                                    <img src="/images/share.svg" alt="">
+                                </span>
+                            </div>
+                            <div class="right">
+                                <a href="#" class="sentence-source">Go to Source</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="sentence">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="info">
+                            <div class="left">
+                                <span class="sentence-id">2</span>
+                                <span class="text-to-speech">
+                                    <img src="/images/text-to-speech.svg" alt="">
+                                </span>
+                                <span class="save-sentence">
+                                    <img src="/images/save.svg" alt="">
+                                </span>
+                                <span class="like">
+                                    <img src="/images/like.svg" alt="">
+                                </span>
+                                <span class="share">
+                                    <img src="/images/share.svg" alt="">
+                                </span>
+                            </div>
+                            <div class="right">
+                                <a href="#" class="sentence-source">Go to Source</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="sentence">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="info">
+                            <div class="left">
+                                <span class="sentence-id">3</span>
+                                <span class="text-to-speech">
+                                    <img src="/images/text-to-speech.svg" alt="">
+                                </span>
+                                <span class="save-sentence">
+                                    <img src="/images/save.svg" alt="">
+                                </span>
+                                <span class="like">
+                                    <img src="/images/like.svg" alt="">
+                                </span>
+                                <span class="share">
+                                    <img src="/images/share.svg" alt="">
+                                </span>
+                            </div>
+                            <div class="right">
+                                <a href="#" class="sentence-source">Go to Source</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="sentence">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="info">
+                            <div class="left">
+                                <span class="sentence-id">4</span>
+                                <span class="text-to-speech">
+                                    <img src="/images/text-to-speech.svg" alt="">
+                                </span>
+                                <span class="save-sentence">
+                                    <img src="/images/save.svg" alt="">
+                                </span>
+                                <span class="like">
+                                    <img src="/images/like.svg" alt="">
+                                </span>
+                                <span class="share">
+                                    <img src="/images/share.svg" alt="">
+                                </span>
+                            </div>
+                            <div class="right">
+                                <a href="#" class="sentence-source">Go to Source</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="sentence">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                        <div class="info">
+                            <div class="left">
+                                <span class="sentence-id">5</span>
+                                <span class="text-to-speech">
+                                    <img src="/images/text-to-speech.svg" alt="">
+                                </span>
+                                <span class="save-sentence">
+                                    <img src="/images/save.svg" alt="">
+                                </span>
+                                <span class="like">
+                                    <img src="/images/like.svg" alt="">
+                                </span>
+                                <span class="share">
+                                    <img src="/images/share.svg" alt="">
+                                </span>
+                            </div>
+                            <div class="right">
+                                <a href="#" class="sentence-source">Go to Source</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+        </section>
+        <section class="right-sidebar">
+            <div class="about-us box">
+                <img src="/images/img2.png" alt="">
+                <h2>Hello World!</h2>
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate itaque alias maiores ab mollitia iusto laudantium saepe repudiandae impedit at, eum ipsam est ipsum porro assumenda harum cumque. Aliquid, quas!</p>
+                <div class="center">
+                    <a href="#" class="read-more">Read more...</a>
+                </div>
+            </div>
+            <div class="more-info box">
+                <h2>More information</h2>
+                <img src="/images/img3.png" alt="">
+                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. In facilis alias asperiores quos error vitae quas dolor dolores, maiores vero perferendis, assumenda modi deserunt minima vel neque quidem non ullam.</p>
+            </div>
+        </section>
+    </main>
+
+    <script></script>
+  </body>
+</html>

@@ -20,8 +20,13 @@
         position: relative;
         padding: 0 clamp(1.375rem, 1.2rem + 0.89vw, 2rem);
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
+      }
+      @media (max-width: 1168px) {
+        .navbar {
+          justify-content: space-between;
+        }
       }
       .navbar a {
         text-decoration: none;
@@ -183,7 +188,7 @@
             const closeMenu = document.querySelector('.navbar .close button');
             const searchButton = document.querySelector('.navbar #search-bar button');
             const searchInput = document.querySelector('.navbar #search-bar input');
-
+            
             menuToggle.addEventListener('click', ()=>{
                 menuDiv.classList.toggle('active');
             });
@@ -192,6 +197,17 @@
             });
             searchButton.addEventListener('click', ()=>{
                 searchInput.classList.toggle('active');
+            });
+            document.addEventListener('click', (e)=>{
+              const menuActiveDiv = document.querySelector('.navbar .menu.active');
+              const searchActiveInput = document.querySelector('.navbar #search-bar input.active');
+
+              if(menuActiveDiv && !menuActiveDiv.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuDiv.classList.toggle('active');
+              }
+              if(searchActiveInput && !searchActiveInput.contains(e.target) && !searchButton.contains(e.target)) {
+                searchInput.classList.toggle('active');
+              }
             });
         });
 

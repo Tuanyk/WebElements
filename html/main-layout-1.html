@@ -10,12 +10,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        
+        #content-wrapper {
+            display: flex;
+            justify-content: center;
+        }
         main {
             font-family: 'Lexend Deca', sans-serif;
             display: grid;
-            grid-template-columns: 300px minmax(300px, 800px) 300px;
             gap: 12px;
+            grid-template-columns: 300px minmax(300px, 800px) 300px;
+        }
+        main h1, main p.main-description, div.related {
+            padding: 0 20px;
+        }
+        @media (max-width: 1168px) {
+            main {
+                gap: 10px;
+                grid-template-columns: 250px minmax(300px, 800px);
+                margin: 0 10px;
+            }
+            section.right-sidebar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 670px) {
+            main {
+                display: flex;
+                margin: 0 10px;
+                flex-direction: column;
+            }
+            section.main {
+                order: -1;
+            }
         }
 
         main img {
@@ -155,9 +182,32 @@
             height: 100%;
             object-fit: cover;
         }
+
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            appearance: none;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            min-height: 2rem;
+            background: padding-box rgba(0, 0, 0, 0.3);
+            border-width: 3px;
+            border-style: solid;
+            border-color: rgba(255, 255, 255, 0);
+            border-image: initial;
+            border-radius: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            border-radius: 0px;
+            background: none;
+        }
+
     </style>
   </head>
   <body>
+    <div id="content-wrapper">
     <main>
         <section class="left-sidebar">
             <div class="introduction box">
@@ -367,7 +417,7 @@
             </div>
         </section>
     </main>
-
+    </div>
     <script></script>
   </body>
 </html>

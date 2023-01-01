@@ -13,12 +13,16 @@
             font-family: 'Lexend Deca', sans-serif;
             margin: 0;
         }
+        footer {
+            margin-top: 20px;
+        }
         footer .main-footer {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            background-color: #4D99FF;
+            background-color: #3C79F5;
             color: white;
+            padding-bottom: 20px;
         }
         footer section {
             width: 250px;
@@ -47,7 +51,35 @@
             display: flex;
             justify-content: space-evenly;
         }
+        footer .footer-bottom {
+            background-color: #2DCDDF;
+            padding: 10px 20px;
+        }
         .cookies-alert {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 500px;
+            z-index: 9;
+            background-color: #454545;
+            color: white;
+            padding: 0px 30px 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px 0px #555555;
+        }
+        .cookies-alert a {
+            color: #3C79F5;
+        }
+        .cookies-alert button {
+            display: block;
+            margin: 20px 0;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 10px 0;
+            background-color: #3C79F5;
+            color: white;
         }
     </style>
 </head>
@@ -103,18 +135,22 @@
                 <div class="search-bar"></div>
             </div>
         </div>
-        <div class="cookies-alert">
+        <div class="cookies-alert" id="cookie-popup">
             <div class="content">
                 <h2>Cookie Consent</h2>
                 <p>To improve your browsing experience on this website, Leonardo and its partners would like to place cookies and similar technologies (“Cookies”) on your device. That enables us to analyze website usage and optimize our marketing efforts for the best possible user experience. By clicking “Accept Cookies” you agree to Cookie placement and respective use, as well as the subsequent processing of the collected data for the purposes of personalized advertising and marketing. Detailed information about the Cookies, the exact purposes, third-party recipients, Cookie lifetime, and more can be found in our Cookie Policy and Privacy Policy.</p>
                 <a href="#">Learn More</a>
-                <button class="accept">Got it!</button>
+                <button class="accept">Accept Cookies</button>
             </div>
         </div>
         </footer>
 
     <script>
-
+        document.addEventListener('DOMContentLoaded', () => {
+            const cookiePopup = document.querySelector('#cookie-popup');
+            setTimeout(()=>{cookiePopup.style.display='block';}, 3000);
+            cookiePopup.querySelector('button').addEventListener('click', ()=>{cookiePopup.style.display='none';});
+        });
     </script>
 </body>
 </html>

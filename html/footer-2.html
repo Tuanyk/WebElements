@@ -13,10 +13,15 @@
             font-family: 'Lexend Deca', sans-serif;
             margin: 0;
         }
+    </style>
+
+
+    <style>
         footer {
             margin-top: 20px;
         }
         footer .main-footer {
+            padding-top: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -27,6 +32,11 @@
         footer section {
             width: 250px;
             padding: 0 20px;
+        }
+        @media (max-width: 676px) {
+            footer section {
+                width: 80%;
+            }
         }
         footer p.description {
             font-weight: 300;
@@ -81,13 +91,39 @@
             background-color: #3C79F5;
             color: white;
         }
+        footer .sign-up {
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer .sign-up input {
+            margin-top: 10px;
+            padding: 7px 0;
+        }
+        footer .sign-up input.button {
+            background-color: #75BC54;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        footer .sign-up input.button:hover {
+            background-color: #2DCDDF;
+        }
+        footer .sign-up input.button:active {
+            transform: translateY(4px);
+        }
+        footer .sign-up input.button:focus-visible {
+            outline: none;
+        }
     </style>
 </head>
 <body>
     <footer>
         <div class="main-footer">
             <section class="section-1">
-                <div class="logo"><img src="/images/logo.png" alt=""></div>
+                <div class="logo"><a href="/"><img src="/images/logo.png" alt=""></a></div>
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt placeat ab beatae, corporis, voluptatum, labore adipisci illo quibusdam reiciendis recusandae hic nemo mollitia vel veritatis quos similique? Necessitatibus, ullam aliquam.</p>
             </section>
             <section class="section-2">
@@ -105,25 +141,25 @@
             <section class="section-3">
                 <h2>Guide</h2>
                 <ul class="links">
-                    <li class="item"><a href="">How to use</a></li>
-                    <li class="item"><a href="">Tutorial</a></li>
-                    <li class="item"><a href="">FAQs</a></li>
-                    <li class="item"><a href="">Share your ideas</a></li>
-                    <li class="item"><a href="">Release Notes</a></li>
+                    <li class="item"><a href="#">How to use</a></li>
+                    <li class="item"><a href="#">Tutorial</a></li>
+                    <li class="item"><a href="#">FAQs</a></li>
+                    <li class="item"><a href="#">Share your ideas</a></li>
+                    <li class="item"><a href="#">Release Notes</a></li>
                 </ul>
             </section>
             <section class="section-4">
                 <h2>Sharing is loving</h2>
                 <div class="social">
-                    <div class="item"><img src="/images/fb.svg" alt=""></div>
-                    <div class="item"><img src="/images/instagram.svg" alt=""></div>
-                    <div class="item"><img src="/images/linkedin.svg" alt=""></div>
-                    <div class="item"><img src="/images/twitch.svg" alt=""></div>
-                    <div class="item"><img src="/images/twitter.svg" alt=""></div>
-                    <div class="item"><img src="/images/youtube.svg" alt=""></div>
+                    <div class="item"><a href="#"><img src="/images/fb.svg" alt=""></a></div>
+                    <div class="item"><a href="#"><img src="/images/twitter.svg" alt=""></a></div>
+                    <div class="item"><a href="#"><img src="/images/instagram.svg" alt=""></a></div>
+                    <div class="item"><a href="#"><img src="/images/linkedin.svg" alt=""></a></div>
+                    <div class="item"><a href="#"><img src="/images/twitch.svg" alt=""></a></div>
+                    <div class="item"><a href="#"><img src="/images/youtube.svg" alt=""></a></div>
                 </div>
                 <form action="" class="sign-up">
-                    <h3>Sign Up For Newletter</h3>
+                    <h2>Sign Up For Newletter</h2>
                     <input type="email" name="email">
                     <input type="submit" value="submit" class="button">
                 </form>

@@ -70,7 +70,8 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            width: 500px;
+            max-width: 500px;
+            margin-left: 20px;
             z-index: 9;
             background-color: #454545;
             color: white;
@@ -95,7 +96,17 @@
             display: flex;
             flex-direction: column;
         }
-
+        .cookies-alert p.mobile-desc {
+            display: none;
+        }
+        @media (max-width: 800px) {
+            .cookies-alert p.mobile-desc {
+                display: block;
+            }
+            .cookies-alert p.desktop-desc {
+                display: none;
+            }
+        }
         footer .sign-up input {
             margin-top: 10px;
             padding: 7px 0;
@@ -174,7 +185,8 @@
         <div class="cookies-alert" id="cookie-popup">
             <div class="content">
                 <h2>Cookie Consent</h2>
-                <p>To improve your browsing experience on this website, Leonardo and its partners would like to place cookies and similar technologies (“Cookies”) on your device. That enables us to analyze website usage and optimize our marketing efforts for the best possible user experience. By clicking “Accept Cookies” you agree to Cookie placement and respective use, as well as the subsequent processing of the collected data for the purposes of personalized advertising and marketing. Detailed information about the Cookies, the exact purposes, third-party recipients, Cookie lifetime, and more can be found in our Cookie Policy and Privacy Policy.</p>
+                <p class="desktop-desc">To improve your browsing experience on this website, Leonardo and its partners would like to place cookies and similar technologies (“Cookies”) on your device. That enables us to analyze website usage and optimize our marketing efforts for the best possible user experience. By clicking “Accept Cookies” you agree to Cookie placement and respective use, as well as the subsequent processing of the collected data for the purposes of personalized advertising and marketing. Detailed information about the Cookies, the exact purposes, third-party recipients, Cookie lifetime, and more can be found in our Cookie Policy and Privacy Policy.</p>
+                <p class="mobile-desc">We use cookies to enhance your browsing experience. Read about <a href="#">how we use cookies</a> and how you can control them by clicking cookie settings. If you continue to use this site, you consent to our use of cookies.</p>
                 <a href="#">Learn More</a>
                 <button class="accept">Accept Cookies</button>
             </div>

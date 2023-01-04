@@ -1,323 +1,831 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-        }
-        img {width:200px;}
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+      }
+      img {
+        width: 100%;
+      }
     </style>
 
     <style>
-        /* HERO SECTION */
-        section.hero-section {
-            display: flex;
-            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,97,121,1) 35%, rgba(42,192,222,1) 100%);
-            color: white;
-            justify-content: center;
-        }
-        section.hero-section div.content {
-            width: 40%;
-        }
-        section.hero-section div.decoration {
-            width: 35%;
-            display: flex;
-            align-items: center;
-            padding: 50px;
-        }
-        section.hero-section h2 {
-            font-size: 55px;
-        }
-        section.hero-section p.description {
-            font-size: 20px;
-            padding-bottom: 50px;
-        }
-        section.hero-section img {
-            width: 100%;
-            height: auto;
-        }
+      :root {
+        --phone-breakpoint: 450px;
+        --tablet-breakpoint: 800px;
+        --desktop-breakpoint: 1200px;
+        --color-1: #1e266d;
+        --color-2: #1276ff;
+        --color-3: #f8f8fc;
+        --color-4: #293c67;
+        --color-5: #e7e7ef;
+        --color-6: #171268;
+        --color-7: #445781;
 
-        /* ABOUT US SECTION */
-        section.about-us {
-            padding: 50px;
-            background-color: #f8f9fa;
-        
-        }
-        section.about-us h2 {
-            color: #333333;
-            font-size: 40px;
-            text-align: center;
-        }
-        
-        section.about-us p {
-            color: #666666;
-            font-size: 16px;
-            line-height: 1.5;
-        }
-        
-        /* DATAINFO SECTION */
-        section.data-info .wrapper {
-            display: flex;
-        }
-        section.data-info .item {
-            padding: 20px;
-            background-color: #ffffff;
-            border: 1px solid #dddddd;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-        }
-        section.data-info h3 {
-            font-size: 40px;
-            font-weight: bold;
-            color: #333333;
-        }
-        section.data-info p {
-            font-size: 20px;
-            color: #666666;
-            margin-top: 10px;
-        }
-        /* DATAINFO SECTION */
-        section.features .wrapper {
-            display: flex;
-        }
+        --linear-color-1: linear-gradient(
+          -80deg,
+          rgba(16, 27, 83, 0.65),
+          rgba(16, 27, 83, 0.96),
+          #101b53
+        );
+        --linear-color-2: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 97, 121, 1) 35%,
+          rgba(42, 192, 222, 1) 100%
+        );
 
-        /* FEATURES SECTION */
-        /* FAQs SECTION */
-        /* TESTIMONIAL SECTION */
-        section.testimonial .wrapper {
-            display: flex;
-        }
-        /* CUSTOMERS SECTION */
+        --box-shadow-1: 10px 31px 51px rgb(0 41 106 / 5%);
 
-        /* CUSTOMER PRIVACY SECTION */
-        /* WHO WE ARE SECTION */
-        section.who-are-we .team-members {
-            display: flex;
-        }
-        /* CONTACT US SECTION */
-        /* TRY IT NOW SECTION */
+        --font-size-sm: 0.75rem; /* 12px */
+        --font-size-base: 1rem; /* 16px, base */
+        --font-size-md: 1.25rem; /* 20px */
+        --font-size-lg: 1.5rem; /* 24px */
+        --font-size-xl: 1.75rem; /* 28px */
+        --font-size-2xl: 2rem; /* 32px */
+        --font-size-3xl: 2.25rem; /* 36px */
+        --font-size-4xl: 2.5rem; /* 40px */
+        --font-size-5xl: 2.75rem; /* 44px */
+        --font-size-6xl: 3rem; /* 48px */
+      }
     </style>
-</head>
-<body>
+    <style>
+      /* HERO SECTION */
+      section.hero-section {
+        display: flex;
+        background: url("/images/hero-section-bg.png"); /* var(--linear-color-1) */
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+        justify-content: center;
+        padding-top: 100px;
+      }
+      section.hero-section div.content {
+        width: 40%;
+      }
+      section.hero-section div.decoration {
+        width: 35%;
+        display: flex;
+        align-items: center;
+        padding: 50px;
+      }
+      section.hero-section h2 {
+        font-size: var(--font-size-6xl);
+      }
+      section.hero-section p.description {
+        font-size: var(--font-size-md);
+        padding-bottom: 50px;
+      }
+      section.hero-section img {
+        width: 100%;
+        height: auto;
+      }
+
+      /* ABOUT US SECTION */
+      section.about-us {
+        padding: 50px 100px 200px 100px;
+        background-color: var(--color-3);
+      }
+      section.about-us h2 {
+        color: var(--color-1);
+        font-size: var(--font-size-4xl);
+        text-align: center;
+      }
+
+      section.about-us p {
+        color: var(--color-4);
+        font-size: var(--font-size-base);
+        line-height: 1.6;
+      }
+
+      /* DATAINFO SECTION */
+      section.data-info {
+        margin-bottom: 60px;
+      }
+      section.data-info .wrapper {
+        display: flex;
+        background-color: white;
+        margin: -130px 90px 0 90px;
+        border-radius: 12px;
+        box-shadow: var(--box-shadow-1);
+      }
+      section.data-info .item {
+        padding: 40px;
+      }
+      section.data-info h3 {
+        font-size: 40px;
+        text-align: center;
+        font-weight: bold;
+        color: var(--color-2);
+      }
+      section.data-info p {
+        text-align: center;
+        font-size: 16px;
+        color: var(--color-1);
+        margin-top: 10px;
+      }
+
+      /* FEATURES SECTION */
+      section.features {
+        background-color: var(--color-3);
+        padding: 50px 100px;
+      }
+      section.features p.before-section-title {
+        margin: 0;
+        color: var(--color-7);
+        font-weight: 600;
+        font-size: var(--font-size-sm);
+      }
+      section.features h2 {
+        color: var(--color-1);
+        font-size: var(--font-size-4xl);
+        text-align: center;
+      }
+      section.features .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 50px;
+        justify-items: center;
+      }
+      section.features .item {
+      }
+      /* FAQs SECTION */
+      section.faqs {
+        padding: 0 100px;
+      }
+      section.faqs h2 {
+        color: var(--color-1);
+        font-size: var(--font-size-4xl);
+        text-align: center;
+      }
+      section.faqs .item {
+        margin-bottom: 1.5rem;
+      }
+      section.faqs .question {
+        font-weight: bold;
+        font-size: var(--font-size-md);
+        margin-bottom: 1rem;
+      }
+      section.faqs .answer {
+        font-weight: 300;
+        font-size: var(--font-size-md);
+      }
+      /* TESTIMONIAL SECTION */
+      section.testimonial {
+        padding: 0 100px;
+      }
+      section.testimonial h2 {
+        color: var(--color-1);
+        font-size: var(--font-size-4xl);
+        text-align: center;
+      }
+      section.testimonial .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      section.testimonial .customer-name {
+        font-weight: bold;
+        font-size: var(--font-size-md);
+      }
+
+      /* CUSTOMERS SECTION */
+      section.customers {
+        padding: 0 100px;
+      }
+      section.customers h2 {
+        color: var(--color-1);
+        font-size: var(--font-size-4xl);
+        text-align: center;
+      }
+      section.customers img {
+        width: 200px;
+      }
+      /* CUSTOMER PRIVACY SECTION */
+      section.customer-privacy {
+        padding: 0 100px;
+      }
+      section.customer-privacy h2 {
+        color: var(--color-1);
+        font-size: var(--font-size-4xl);
+        text-align: center;
+      }
+      /* WHO WE ARE SECTION */
+      section.who-are-we {
+        padding: 0 100px;
+      }
+      section.who-are-we .team-members {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+      section.who-are-we h2 {
+        color: var(--color-1);
+        font-size: var(--font-size-4xl);
+        text-align: center;
+      }
+      /* CONTACT US SECTION */
+      section.contact-us {
+        padding: 0 100px;
+      }
+      section.contact-us h2 {
+        color: var(--color-1);
+        font-size: var(--font-size-4xl);
+        text-align: center;
+      }
+      /* TRY IT NOW SECTION */
+      section.try-it-now {
+        padding: 0 100px;
+      }
+      section.try-it-now h2 {
+        color: var(--color-1);
+        font-size: var(--font-size-4xl);
+        text-align: center;
+      }
+    </style>
+
+    <style>
+      section.site-header {
+        position: fixed;
+        padding: 20px 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 111;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+        background-color: rgba(42, 30, 92, 0);
+      }
+      section.site-header.single {
+        background-color: var(--color-1);
+      }
+      section.site-header .wrapper {
+        display: flex;
+        padding: 0 45px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      section.site-header .wrapper .header-menu {
+        display: flex;
+        align-items: center;
+      }
+      section.site-header .menu-item {
+        margin-right: 30px;
+      }
+      section.site-header .menu-item span {
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+      }
+      section.site-header .menu-item:hover span {
+        opacity: 0.7;
+      }
+
+      section.site-header .menu-item a {
+        text-decoration: none;
+        color: white;
+        padding: 20px 0;
+        text-transform: capitalize;
+      }
+      section.site-header .wrapper .cta {
+        display: flex;
+      }
+      section.site-header .header-logo {
+        width: 200px;
+      }
+      section.site-header .header-logo img {
+        width: 100%;
+      }
+      section.site-header .search-toggle {
+        margin: 0;
+        width: 29px;
+        height: 29px;
+        background-color: rgba(255, 255, 255, 0.17);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      section.site-header .search-toggle img {
+        width: 12px;
+        height: 12px;
+      }
+      section.site-header .cta a {
+        text-decoration: none;
+        color: white;
+        padding: 14px 24px;
+        transition: all 0.6s ease;
+        -webkit-transition: all 0.6s ease;
+        border-radius: 5px;
+        border: 1px solid white;
+      }
+      section.site-header .cta a:hover {
+        border-color: var(--color-2);
+        background-color: var(--color-2);
+        color: white;
+      }
+
+      section.site-header::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 0;
+        width: 100%;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+      }
+      section.site-header.scrolled::before {
+        background-color: #ffffff;
+        z-index: -1;
+        height: 100%;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+      }
+      section.site-header.scrolled .menu-item a {
+        color: var(--color-4);
+      }
+
+      section.site-header.scrolled .search-toggle {
+        background-color: rgba(16, 37, 62, 0.2);
+      }
+      section.site-header.scrolled .cta a {
+        border-color: var(--color-2);
+        background-color: var(--color-2);
+        color: white;
+      }
+      section.site-header.scrolled .cta a:hover {
+        box-shadow: 4px 4px 8px rgb(18 118 255 / 29%);
+      }
+      section.site-header .progress-container {
+        background-color: #e5efff;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+      section.site-header .progress-container.visible {
+        visibility: visible;
+        opacity: 1;
+      }
+      section.site-header .progress-container .progress-bar {
+        border-radius: 4px;
+        background-color: #3a95f7;
+        height: 1px;
+        width: 100%;
+        -webkit-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="site-header">
+      <div class="wrapper">
+        <div class="header-logo"><img src="/images/logo.png" alt="" /></div>
+        <nav class="header-menu">
+          <div class="menu-item">
+            <a href="#">
+              <span>solutions</span>
+            </a>
+            <div class="mega-menu"></div>
+          </div>
+          <div class="menu-item">
+            <a href="#">
+              <span>industries</span>
+            </a>
+            <div class="mega-menu"></div>
+          </div>
+          <div class="menu-item">
+            <a href="#">
+              <span>customers</span>
+            </a>
+            <div class="mega-menu"></div>
+          </div>
+          <div class="menu-item">
+            <a href="#">
+              <span>pricing</span>
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="#">
+              <span>company</span>
+            </a>
+            <div class="mega-menu"></div>
+          </div>
+          <div class="search-toggle">
+            <img src="/images/search-icon.svg" alt="" />
+          </div>
+        </nav>
+        <div class="cta">
+          <a href="#" class="button-primary"><span>Contact Sales</span></a>
+        </div>
+      </div>
+      <div class="progress-container" id="progress-container">
+        <div style="transform: translateX(-100%)" class="progress-bar"></div>
+      </div>
+    </section>
+
     <section class="hero-section">
-        <div class="content">
-            <h2>Hero Section - Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
-            <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae quae magni, optio maiores non porro voluptate, voluptas possimus fugiat molestiae adipisci autem velit sint minus. Eos natus beatae corrupti impedit?</p>
-        </div>
-            <div class="decoration">
-            <img src="/images/placeholder.jpg" alt="">
-        </div>
+      <div class="content">
+        <h2>
+          Hero Section - Lorem ipsum dolor sit amet consectetur adipisicing
+          elit.
+        </h2>
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae
+          quae magni, optio maiores non porro voluptate, voluptas possimus
+          fugiat molestiae adipisci autem velit sint minus. Eos natus beatae
+          corrupti impedit?
+        </p>
+      </div>
+      <div class="decoration">
+        <img src="/images/placeholder.webp" alt="" />
+      </div>
     </section>
     <section class="about-us">
-        <h2>About Us</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a massa eget diam vehicula pharetra. Morbi vestibulum, neque id convallis dapibus, metus est pellentesque justo, sit amet suscipit risus urna id nulla.</p>
-      </section>     
+      <h2>About Us</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a massa eget
+        diam vehicula pharetra. Morbi vestibulum, neque id convallis dapibus,
+        metus est pellentesque justo, sit amet suscipit risus urna id nulla.
+      </p>
+    </section>
     <section class="data-info">
-        <div class="wrapper">
-            <div class="item">
-                <h3>500M+</h3>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-            <div class="item">
-                <h3>500M+</h3>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-            <div class="item">
-                <h3>500M+</h3>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-            <div class="item">
-                <h3>500M+</h3>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
+      <div class="wrapper">
+        <div class="item">
+          <h3>500M+</h3>
+          <p>Lorem ipsum dolor sit amet consectetur</p>
         </div>
+        <div class="item">
+          <h3>10K+</h3>
+          <p>Lorem ipsum dolor sit amet consectetur</p>
+        </div>
+        <div class="item">
+          <h3>50K+</h3>
+          <p>Lorem ipsum dolor sit amet consectetur</p>
+        </div>
+        <div class="item">
+          <h3>99%</h3>
+          <p>Lorem ipsum dolor sit amet consectetur</p>
+        </div>
+      </div>
     </section>
     <section class="features">
-        <h2>Features - What we can do</h2>
-        <div class="wrapper">
-            <div class="item">
-                <div class="thumb"><img src="/images/placeholder.jpg" alt=""></div>
-                <h2 class="feature">Feature A</h2>
-                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque fuga laboriosam assumenda vel debitis nihil nemo perferendis consectetur cumque obcaecati delectus voluptate sed reprehenderit, laudantium suscipit voluptatem ab repudiandae?</p>
-            </div>
-            <div class="item">
-                <div class="thumb"><img src="/images/placeholder.jpg" alt=""></div>
-                <h2 class="feature">Feature A</h2>
-                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque fuga laboriosam assumenda vel debitis nihil nemo perferendis consectetur cumque obcaecati delectus voluptate sed reprehenderit, laudantium suscipit voluptatem ab repudiandae?</p>
-            </div>
-            <div class="item">
-                <div class="thumb"><img src="/images/placeholder.jpg" alt=""></div>
-                <h2 class="feature">Feature A</h2>
-                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque fuga laboriosam assumenda vel debitis nihil nemo perferendis consectetur cumque obcaecati delectus voluptate sed reprehenderit, laudantium suscipit voluptatem ab repudiandae?</p>
-            </div>
-            <div class="item">
-                <div class="thumb"><img src="/images/placeholder.jpg" alt=""></div>
-                <h2 class="feature">Feature A</h2>
-                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque fuga laboriosam assumenda vel debitis nihil nemo perferendis consectetur cumque obcaecati delectus voluptate sed reprehenderit, laudantium suscipit voluptatem ab repudiandae?</p>
-            </div>
-            <div class="item">
-                <div class="thumb"><img src="/images/placeholder.jpg" alt=""></div>
-                <h2 class="feature">Feature A</h2>
-                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque fuga laboriosam assumenda vel debitis nihil nemo perferendis consectetur cumque obcaecati delectus voluptate sed reprehenderit, laudantium suscipit voluptatem ab repudiandae?</p>
-            </div>
-            <div class="item">
-                <div class="thumb"><img src="/images/placeholder.jpg" alt=""></div>
-                <h2 class="feature">Feature A</h2>
-                <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque fuga laboriosam assumenda vel debitis nihil nemo perferendis consectetur cumque obcaecati delectus voluptate sed reprehenderit, laudantium suscipit voluptatem ab repudiandae?</p>
-            </div>
+      <p class="before-section-title">What we can do</p>
+      <h2>Features</h2>
+      <div class="wrapper">
+        <div class="item">
+          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <h3 class="feature">Feature A</h3>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
+            fuga laboriosam assumenda vel debitis nihil nemo perferendis
+            consectetur cumque obcaecati delectus voluptate sed reprehenderit,
+            laudantium suscipit voluptatem ab repudiandae?
+          </p>
         </div>
-
+        <div class="item">
+          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <h3 class="feature">Feature A</h3>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
+            fuga laboriosam assumenda vel debitis nihil nemo perferendis
+            consectetur cumque obcaecati delectus voluptate sed reprehenderit,
+            laudantium suscipit voluptatem ab repudiandae?
+          </p>
+        </div>
+        <div class="item">
+          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <h3 class="feature">Feature A</h3>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
+            fuga laboriosam assumenda vel debitis nihil nemo perferendis
+            consectetur cumque obcaecati delectus voluptate sed reprehenderit,
+            laudantium suscipit voluptatem ab repudiandae?
+          </p>
+        </div>
+        <div class="item">
+          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <h3 class="feature">Feature A</h3>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
+            fuga laboriosam assumenda vel debitis nihil nemo perferendis
+            consectetur cumque obcaecati delectus voluptate sed reprehenderit,
+            laudantium suscipit voluptatem ab repudiandae?
+          </p>
+        </div>
+        <div class="item">
+          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <h3 class="feature">Feature A</h3>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
+            fuga laboriosam assumenda vel debitis nihil nemo perferendis
+            consectetur cumque obcaecati delectus voluptate sed reprehenderit,
+            laudantium suscipit voluptatem ab repudiandae?
+          </p>
+        </div>
+        <div class="item">
+          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <h3 class="feature">Feature A</h3>
+          <p class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
+            fuga laboriosam assumenda vel debitis nihil nemo perferendis
+            consectetur cumque obcaecati delectus voluptate sed reprehenderit,
+            laudantium suscipit voluptatem ab repudiandae?
+          </p>
+        </div>
+      </div>
     </section>
     <section class="faqs">
-        <h2>FAQs</h2>
-        <div class="wrapper">
-            <div class="item">
-                <div class="question">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                <div class="answer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex distinctio eos, porro aut alias, numquam quo quam at, dolor optio ipsa atque eaque. Exercitationem vel nam repellat explicabo perferendis in.</div>
-            </div>
-            <div class="item">
-                <div class="question">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                <div class="answer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex distinctio eos, porro aut alias, numquam quo quam at, dolor optio ipsa atque eaque. Exercitationem vel nam repellat explicabo perferendis in.</div>
-            </div>
-            <div class="item">
-                <div class="question">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                <div class="answer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex distinctio eos, porro aut alias, numquam quo quam at, dolor optio ipsa atque eaque. Exercitationem vel nam repellat explicabo perferendis in.</div>
-            </div>
-            <div class="item">
-                <div class="question">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                <div class="answer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex distinctio eos, porro aut alias, numquam quo quam at, dolor optio ipsa atque eaque. Exercitationem vel nam repellat explicabo perferendis in.</div>
-            </div>
-            <div class="item">
-                <div class="question">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-                <div class="answer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex distinctio eos, porro aut alias, numquam quo quam at, dolor optio ipsa atque eaque. Exercitationem vel nam repellat explicabo perferendis in.</div>
-            </div>
-        </div>            
+      <h2>FAQs</h2>
+      <div class="wrapper">
+        <div class="item">
+          <div class="question">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </div>
+          <div class="answer">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex
+            distinctio eos, porro aut alias, numquam quo quam at, dolor optio
+            ipsa atque eaque. Exercitationem vel nam repellat explicabo
+            perferendis in.
+          </div>
+        </div>
+        <div class="item">
+          <div class="question">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </div>
+          <div class="answer">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex
+            distinctio eos, porro aut alias, numquam quo quam at, dolor optio
+            ipsa atque eaque. Exercitationem vel nam repellat explicabo
+            perferendis in.
+          </div>
+        </div>
+        <div class="item">
+          <div class="question">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </div>
+          <div class="answer">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex
+            distinctio eos, porro aut alias, numquam quo quam at, dolor optio
+            ipsa atque eaque. Exercitationem vel nam repellat explicabo
+            perferendis in.
+          </div>
+        </div>
+        <div class="item">
+          <div class="question">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </div>
+          <div class="answer">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex
+            distinctio eos, porro aut alias, numquam quo quam at, dolor optio
+            ipsa atque eaque. Exercitationem vel nam repellat explicabo
+            perferendis in.
+          </div>
+        </div>
+        <div class="item">
+          <div class="question">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </div>
+          <div class="answer">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex
+            distinctio eos, porro aut alias, numquam quo quam at, dolor optio
+            ipsa atque eaque. Exercitationem vel nam repellat explicabo
+            perferendis in.
+          </div>
+        </div>
+      </div>
     </section>
     <section class="testimonial">
-        <h2>What our customers think of OurService?</h2>
-        <div class="wrapper">
-            <div class="item">
-                <div class="thumb"><img src="/images/placeholder.jpg" alt=""></div>
-                <div class="customer-name">Sarah</div>
-                <div class="customer-thought">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab at eum sed natus quibusdam tenetur quidem. Fugit, obcaecati vitae! Earum tenetur id alias temporibus enim animi aspernatur doloribus inventore.</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="thumb"><img src="/images/placeholder.jpg" alt=""></div>
-                <div class="customer-name">Sarah</div>
-                <div class="customer-thought">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab at eum sed natus quibusdam tenetur quidem. Fugit, obcaecati vitae! Earum tenetur id alias temporibus enim animi aspernatur doloribus inventore.</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="thumb"><img src="/images/placeholder.jpg" alt=""></div>
-                <div class="customer-name">Sarah</div>
-                <div class="customer-thought">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab at eum sed natus quibusdam tenetur quidem. Fugit, obcaecati vitae! Earum tenetur id alias temporibus enim animi aspernatur doloribus inventore.</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="thumb"><img src="/images/placeholder.jpg" alt=""></div>
-                <div class="customer-name">Sarah</div>
-                <div class="customer-thought">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab at eum sed natus quibusdam tenetur quidem. Fugit, obcaecati vitae! Earum tenetur id alias temporibus enim animi aspernatur doloribus inventore.</p>
-                </div>
-            </div>
-            <div class="item">
-                <div class="thumb"><img src="/images/placeholder.jpg" alt=""></div>
-                <div class="customer-name">Sarah</div>
-                <div class="customer-thought">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab at eum sed natus quibusdam tenetur quidem. Fugit, obcaecati vitae! Earum tenetur id alias temporibus enim animi aspernatur doloribus inventore.</p>
-                </div>
-            </div>
+      <h2>What our customers think of OurService?</h2>
+      <div class="wrapper">
+        <div class="item">
+          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="customer-name">Sarah</div>
+          <div class="customer-thought">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              ab at eum sed natus quibusdam tenetur quidem. Fugit, obcaecati
+              vitae! Earum tenetur id alias temporibus enim animi aspernatur
+              doloribus inventore.
+            </p>
+          </div>
         </div>
+        <div class="item">
+          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="customer-name">Sarah</div>
+          <div class="customer-thought">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              ab at eum sed natus quibusdam tenetur quidem. Fugit, obcaecati
+              vitae! Earum tenetur id alias temporibus enim animi aspernatur
+              doloribus inventore.
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="customer-name">Sarah</div>
+          <div class="customer-thought">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              ab at eum sed natus quibusdam tenetur quidem. Fugit, obcaecati
+              vitae! Earum tenetur id alias temporibus enim animi aspernatur
+              doloribus inventore.
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="customer-name">Sarah</div>
+          <div class="customer-thought">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              ab at eum sed natus quibusdam tenetur quidem. Fugit, obcaecati
+              vitae! Earum tenetur id alias temporibus enim animi aspernatur
+              doloribus inventore.
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="customer-name">Sarah</div>
+          <div class="customer-thought">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              ab at eum sed natus quibusdam tenetur quidem. Fugit, obcaecati
+              vitae! Earum tenetur id alias temporibus enim animi aspernatur
+              doloribus inventore.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="customers">
-        <h2>Customers & Clients</h2>
-        <div class="wrapper">
-            <img src="/images/placeholder.jpg" alt="">
-            <img src="/images/placeholder.jpg" alt="">
-            <img src="/images/placeholder.jpg" alt="">
-            <img src="/images/placeholder.jpg" alt="">
-            <img src="/images/placeholder.jpg" alt="">
-            <img src="/images/placeholder.jpg" alt="">
-            <img src="/images/placeholder.jpg" alt="">
-            <img src="/images/placeholder.jpg" alt="">
-            <img src="/images/placeholder.jpg" alt="">
-            <img src="/images/placeholder.jpg" alt="">
-        </div>
+      <h2>Customers & Clients</h2>
+      <div class="wrapper">
+        <img src="/images/placeholder.webp" alt="" />
+        <img src="/images/placeholder.webp" alt="" />
+        <img src="/images/placeholder.webp" alt="" />
+        <img src="/images/placeholder.webp" alt="" />
+        <img src="/images/placeholder.webp" alt="" />
+        <img src="/images/placeholder.webp" alt="" />
+        <img src="/images/placeholder.webp" alt="" />
+        <img src="/images/placeholder.webp" alt="" />
+        <img src="/images/placeholder.webp" alt="" />
+        <img src="/images/placeholder.webp" alt="" />
+      </div>
     </section>
     <section class="customer-privacy">
-        <h2>Customer Privacy</h2>
-        <p>Our customers range from startups to massive Fortune 50 companies and everything in between. Our customers value their privacy, and we expect you would too. They trust us with their privacy and as a result, we don’t publicly publish our customer names and logos anywhere.</p>
-        <p><strong>We promise you your privacy and guard it fiercely</strong></p>
+      <h2>Customer Privacy</h2>
+      <p>
+        Our customers range from startups to massive Fortune 50 companies and
+        everything in between. Our customers value their privacy, and we expect
+        you would too. They trust us with their privacy and as a result, we
+        don’t publicly publish our customer names and logos anywhere.
+      </p>
+      <p><strong>We promise you your privacy and guard it fiercely</strong></p>
     </section>
     <section class="who-are-we">
-        <h1>Who are we?</h1>
-        <div class="team-members">
-            <div class="member">
-                <div class="member-image"><img src="/images/placeholder.jpg" alt=""></div>
-                <div class="member-name"><h3>Lorem ipsum</h3></div>
-                <div class="member-role">Co-Founder</div>
-                <div class="member-info"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim eius aspernatur unde. Repellat, corporis deleniti fuga eos harum nesciunt, ea ullam aperiam tempora, eum voluptatem aspernatur dolor enim. Vel, obcaecati?</p>
-                <p>You can read the full-story here: <a href="#">Read more...</a></p>
-                </div>
-
-            </div>
-            <div class="member">
-                <div class="member-image"><img src="/images/placeholder.jpg" alt=""></div>
-                <div class="member-name"><h3>Lorem ipsum</h3></div>
-                <div class="member-role">Co-Founder</div>
-                <div class="member-info"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim eius aspernatur unde. Repellat, corporis deleniti fuga eos harum nesciunt, ea ullam aperiam tempora, eum voluptatem aspernatur dolor enim. Vel, obcaecati?</p>
-                <p>You can read the full-story here: <a href="#">Read more...</a></p>
-                </div>
-
-            </div>
-            <div class="member">
-                <div class="member-image"><img src="/images/placeholder.jpg" alt=""></div>
-                <div class="member-name"><h3>Lorem ipsum</h3></div>
-                <div class="member-role">Co-Founder</div>
-                <div class="member-info"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim eius aspernatur unde. Repellat, corporis deleniti fuga eos harum nesciunt, ea ullam aperiam tempora, eum voluptatem aspernatur dolor enim. Vel, obcaecati?</p>
-                <p>You can read the full-story here: <a href="#">Read more...</a></p>
-                </div>
-
-            </div>
+      <h1>Who are we?</h1>
+      <div class="team-members">
+        <div class="member">
+          <div class="member-image">
+            <img src="/images/placeholder.webp" alt="" />
+          </div>
+          <div class="member-name"><h3>Lorem ipsum</h3></div>
+          <div class="member-role">Co-Founder</div>
+          <div class="member-info">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
+              eius aspernatur unde. Repellat, corporis deleniti fuga eos harum
+              nesciunt, ea ullam aperiam tempora, eum voluptatem aspernatur
+              dolor enim. Vel, obcaecati?
+            </p>
+            <p>
+              You can read the full-story here: <a href="#">Read more...</a>
+            </p>
+          </div>
         </div>
+        <div class="member">
+          <div class="member-image">
+            <img src="/images/placeholder.webp" alt="" />
+          </div>
+          <div class="member-name"><h3>Lorem ipsum</h3></div>
+          <div class="member-role">Co-Founder</div>
+          <div class="member-info">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
+              eius aspernatur unde. Repellat, corporis deleniti fuga eos harum
+              nesciunt, ea ullam aperiam tempora, eum voluptatem aspernatur
+              dolor enim. Vel, obcaecati?
+            </p>
+            <p>
+              You can read the full-story here: <a href="#">Read more...</a>
+            </p>
+          </div>
+        </div>
+        <div class="member">
+          <div class="member-image">
+            <img src="/images/placeholder.webp" alt="" />
+          </div>
+          <div class="member-name"><h3>Lorem ipsum</h3></div>
+          <div class="member-role">Co-Founder</div>
+          <div class="member-info">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
+              eius aspernatur unde. Repellat, corporis deleniti fuga eos harum
+              nesciunt, ea ullam aperiam tempora, eum voluptatem aspernatur
+              dolor enim. Vel, obcaecati?
+            </p>
+            <p>
+              You can read the full-story here: <a href="#">Read more...</a>
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="contact-us">
-        <h2>Contact Us</h2>
-        <p>Got any questions? Don't hesitate to reach</p>
-        <button>Get in Touch</button>
+      <h2>Contact Us</h2>
+      <p>Got any questions? Don't hesitate to reach</p>
+      <button>Get in Touch</button>
     </section>
     <section class="try-it-now">
-        <h2>Try it now!</h2>
-        <form action="/" method="get" id="search-form">
-            <input type="text" name="s" id="s" class="search-text">
-            <button class="button">
-                <svg class="web-search__search-icon" xmlns="http://www.w3.org/2000/svg" height="24" width="24" aria-hidden="true">
-                    <path d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                </svg>
-            </button>
-        </form>
+      <h2>Try it now!</h2>
+      <form action="/" method="get" id="search-form">
+        <input type="text" name="s" id="s" class="search-text" />
+        <button class="button">
+          <svg
+            class="web-search__search-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            width="24"
+            aria-hidden="true"
+          >
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+            ></path>
+          </svg>
+        </button>
+      </form>
     </section>
 
     <script>
-        document.getElementById('search-form').onsubmit = function (e) {
-            let form_value = document.getElementById('s').value;
-            form_value = encodeURI(form_value).replaceAll('%20', '-');
-            e = e || window.event;
-            e.preventDefault();
-            window.location.href = '/s/'+ form_value;
-        };
+      function getScrollPercent() {
+        var h = document.documentElement,
+          b = document.body,
+          st = "scrollTop",
+          sh = "scrollHeight";
+        return ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
+      }
+      document.getElementById("search-form").onsubmit = function (e) {
+        let form_value = document.getElementById("s").value;
+        form_value = encodeURI(form_value).replaceAll("%20", "-");
+        e = e || window.event;
+        e.preventDefault();
+        window.location.href = "/s/" + form_value;
+      };
+      window.addEventListener("scroll", function () {
+        document.querySelector(
+          "section.site-header .progress-container .progress-bar "
+        ).style =
+          "transform: translateX(-" + (100 - getScrollPercent()) + "%);";
+
+        if (window.scrollY > 0) {
+          document
+            .querySelector("section.site-header")
+            .classList.add("scrolled");
+          document
+            .querySelector("section.site-header .progress-container")
+            .classList.add("visible");
+        } else {
+          document
+            .querySelector("section.site-header")
+            .classList.remove("scrolled");
+          document
+            .querySelector("section.site-header .progress-container")
+            .classList.remove("visible");
+        }
+      });
     </script>
-</body>
+  </body>
 </html>

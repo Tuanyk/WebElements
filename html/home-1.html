@@ -117,7 +117,8 @@
         margin-bottom: 60px;
       }
       section.data-info .wrapper {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         background-color: white;
         margin: -130px 90px 0 90px;
         border-radius: 12px;
@@ -308,6 +309,18 @@
       }
       section.site-header .header-logo img {
         width: 100%;
+      }
+      section.site-header .header-logo img.logo-main {
+        display: block;
+      }
+      section.site-header .header-logo img.logo-dark {
+        display: none;
+      }
+      section.site-header.scrolled .header-logo img.logo-dark {
+        display: block;
+      }
+      section.site-header.scrolled .header-logo img.logo-main {
+        display: none;
       }
       section.site-header .search-toggle {
         margin: 0;
@@ -526,7 +539,12 @@
     <!-- Add class single to section below to have section background (If menu is not on homepage, we will not have that herosection with dark background, so, the background of this section can not be transparent) -->
     <section class="site-header">
       <div class="wrapper">
-        <div class="header-logo"><img src="/static/logo.png" alt="" /></div>
+        <a href="/">
+          <div class="header-logo">
+            <img src="/static/logo-white.png" alt="" class="logo-main"/>
+            <img src="/static/logo-dark.png" alt="" class="logo-dark"/>
+          </div>
+        </a>
         <nav class="header-menu">
           <div class="menu-item">
             <a href="#">
@@ -579,11 +597,11 @@
                       <img src="/static/search-icon2.svg" alt="" />
                       <input
                         type="text"
-                        class="search-input"
+                        class="search-input s"
                         id="search-input"
-						name="s"
                         placeholder="Searching..."
                       />
+                      <input type="submit" hidden />
                     </div>
                   </form>
                 </div>
@@ -956,7 +974,7 @@
     <section class="try-it-now">
       <h2>Try it now!</h2>
       <form action="/" method="get" id="search-form" class="search-form">
-        <input type="text" name="s" id="s" class="search-text" />
+        <input type="text" name="s" class="s" class="search-text" />
         <button class="button">
           <svg
             class="web-search__search-icon"
@@ -1036,11 +1054,11 @@
           }
         });
         for (const searchForm of searchForms) {
-          searchForm.onsubmit = function (e) {
-            let form_value = document.getElementById("s").value;
+          searchForm.onsubmit = function (form_event) {
+            let form_value = searchForm.querySelector(".s").value;
             form_value = encodeURI(form_value).replaceAll("%20", "-");
-            e = e || window.event;
-            e.preventDefault();
+            form_event = form_event || window.event;
+            form_event.preventDefault();
             window.location.href = "/s/" + form_value;
           };
         }

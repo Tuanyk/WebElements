@@ -66,7 +66,7 @@
       /* HERO SECTION */
       section.hero-section {
         display: flex;
-        background: url("/images/hero-section-bg.png"); /* var(--linear-color-1) */
+        background: url("/static/hero-section-bg.png"); /* var(--linear-color-1) */
         background-position: center center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -526,7 +526,7 @@
     <!-- Add class single to section below to have section background (If menu is not on homepage, we will not have that herosection with dark background, so, the background of this section can not be transparent) -->
     <section class="site-header">
       <div class="wrapper">
-        <div class="header-logo"><img src="/images/logo.png" alt="" /></div>
+        <div class="header-logo"><img src="/static/logo.png" alt="" /></div>
         <nav class="header-menu">
           <div class="menu-item">
             <a href="#">
@@ -555,12 +555,12 @@
           </div>
           <div class="search">
             <div class="search-toggle">
-              <img src="/images/search-icon.svg" alt="" />
+              <img src="/static/search-icon.svg" alt="" />
             </div>
             <div class="search-popup">
               <div class="wrapper">
                 <div class="search-form">
-                  <form action="" method="get">
+                  <form action="" method="get" class="search-form">
                     <h3>Search applications</h3>
                     <span class="close-popup">
                       <svg
@@ -576,11 +576,12 @@
                       </svg>
                     </span>
                     <div class="input-wrapper">
-                      <img src="/images/search-icon2.svg" alt="" />
+                      <img src="/static/search-icon2.svg" alt="" />
                       <input
                         type="text"
                         class="search-input"
                         id="search-input"
+						name="s"
                         placeholder="Searching..."
                       />
                     </div>
@@ -641,7 +642,7 @@
         </p>
       </div>
       <div class="decoration">
-        <img src="/images/placeholder.webp" alt="" />
+        <img src="/static/placeholder.webp" alt="" />
       </div>
     </section>
     <section class="about-us">
@@ -677,7 +678,7 @@
       <h2>Features</h2>
       <div class="wrapper">
         <div class="item">
-          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
           <h3 class="feature">Feature A</h3>
           <p class="desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
@@ -687,7 +688,7 @@
           </p>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
           <h3 class="feature">Feature A</h3>
           <p class="desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
@@ -697,7 +698,7 @@
           </p>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
           <h3 class="feature">Feature A</h3>
           <p class="desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
@@ -707,7 +708,7 @@
           </p>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
           <h3 class="feature">Feature A</h3>
           <p class="desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
@@ -717,7 +718,7 @@
           </p>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
           <h3 class="feature">Feature A</h3>
           <p class="desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
@@ -727,7 +728,7 @@
           </p>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
           <h3 class="feature">Feature A</h3>
           <p class="desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
@@ -802,7 +803,7 @@
       <h2>What our customers think of OurService?</h2>
       <div class="wrapper">
         <div class="item">
-          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
           <div class="customer-name">Sarah</div>
           <div class="customer-thought">
             <p>
@@ -814,7 +815,7 @@
           </div>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
           <div class="customer-name">Sarah</div>
           <div class="customer-thought">
             <p>
@@ -826,7 +827,7 @@
           </div>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
           <div class="customer-name">Sarah</div>
           <div class="customer-thought">
             <p>
@@ -838,7 +839,7 @@
           </div>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
           <div class="customer-name">Sarah</div>
           <div class="customer-thought">
             <p>
@@ -850,7 +851,7 @@
           </div>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/images/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
           <div class="customer-name">Sarah</div>
           <div class="customer-thought">
             <p>
@@ -866,16 +867,16 @@
     <section class="customers">
       <h2>Customers & Clients</h2>
       <div class="wrapper">
-        <img src="/images/placeholder.webp" alt="" />
-        <img src="/images/placeholder.webp" alt="" />
-        <img src="/images/placeholder.webp" alt="" />
-        <img src="/images/placeholder.webp" alt="" />
-        <img src="/images/placeholder.webp" alt="" />
-        <img src="/images/placeholder.webp" alt="" />
-        <img src="/images/placeholder.webp" alt="" />
-        <img src="/images/placeholder.webp" alt="" />
-        <img src="/images/placeholder.webp" alt="" />
-        <img src="/images/placeholder.webp" alt="" />
+        <img src="/static/placeholder.webp" alt="" />
+        <img src="/static/placeholder.webp" alt="" />
+        <img src="/static/placeholder.webp" alt="" />
+        <img src="/static/placeholder.webp" alt="" />
+        <img src="/static/placeholder.webp" alt="" />
+        <img src="/static/placeholder.webp" alt="" />
+        <img src="/static/placeholder.webp" alt="" />
+        <img src="/static/placeholder.webp" alt="" />
+        <img src="/static/placeholder.webp" alt="" />
+        <img src="/static/placeholder.webp" alt="" />
       </div>
     </section>
     <section class="customer-privacy">
@@ -893,7 +894,7 @@
       <div class="team-members">
         <div class="member">
           <div class="member-image">
-            <img src="/images/placeholder.webp" alt="" />
+            <img src="/static/placeholder.webp" alt="" />
           </div>
           <div class="member-name"><h3>Lorem ipsum</h3></div>
           <div class="member-role">Co-Founder</div>
@@ -911,7 +912,7 @@
         </div>
         <div class="member">
           <div class="member-image">
-            <img src="/images/placeholder.webp" alt="" />
+            <img src="/static/placeholder.webp" alt="" />
           </div>
           <div class="member-name"><h3>Lorem ipsum</h3></div>
           <div class="member-role">Co-Founder</div>
@@ -929,7 +930,7 @@
         </div>
         <div class="member">
           <div class="member-image">
-            <img src="/images/placeholder.webp" alt="" />
+            <img src="/static/placeholder.webp" alt="" />
           </div>
           <div class="member-name"><h3>Lorem ipsum</h3></div>
           <div class="member-role">Co-Founder</div>
@@ -954,7 +955,7 @@
     </section>
     <section class="try-it-now">
       <h2>Try it now!</h2>
-      <form action="/" method="get" id="search-form">
+      <form action="/" method="get" id="search-form" class="search-form">
         <input type="text" name="s" id="s" class="search-text" />
         <button class="button">
           <svg
@@ -981,13 +982,7 @@
           sh = "scrollHeight";
         return ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
       }
-      document.getElementById("search-form").onsubmit = function (e) {
-        let form_value = document.getElementById("s").value;
-        form_value = encodeURI(form_value).replaceAll("%20", "-");
-        e = e || window.event;
-        e.preventDefault();
-        window.location.href = "/s/" + form_value;
-      };
+
       window.addEventListener("scroll", function () {
         document.querySelector(
           "section.site-header .progress-container .progress-bar "
@@ -1020,6 +1015,7 @@
         const searchPopup = document.querySelector(
           "section.site-header .search-popup"
         );
+        const searchForms = document.querySelectorAll("form.search-form");
         toggleSearchButton.addEventListener("click", () => {
           searchPopup.classList.toggle("visible");
         });
@@ -1030,11 +1026,24 @@
           const searchPopupActive = document.querySelector(
             "section.site-header .search-popup.visible"
           );
-		  
-          if (searchPopupActive != null && !searchPopupActive.contains(e.target) && !toggleSearchButton.contains(e.target)) {
-			searchPopupActive.classList.remove("visible");
+
+          if (
+            searchPopupActive != null &&
+            !searchPopupActive.contains(e.target) &&
+            !toggleSearchButton.contains(e.target)
+          ) {
+            searchPopupActive.classList.remove("visible");
           }
         });
+        for (const searchForm of searchForms) {
+          searchForm.onsubmit = function (e) {
+            let form_value = document.getElementById("s").value;
+            form_value = encodeURI(form_value).replaceAll("%20", "-");
+            e = e || window.event;
+            e.preventDefault();
+            window.location.href = "/s/" + form_value;
+          };
+        }
       });
     </script>
   </body>

@@ -5,17 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- General css -->
     <style>
       body {
         margin: 0;
-        font-family: "Inter", sans-serif;
+        font-family: "Lexend Deca", sans-serif;
       }
       img {
         width: 100%;
@@ -444,6 +441,7 @@
       section.features h3 {
         color: var(--color-1);
         font-weight: 500;
+        text-align: center;
       }
       section.features .item {
         padding: 32px;
@@ -453,12 +451,20 @@
         transition: all 0.3s linear;
         box-shadow: 12px 12px 36px rgb(0 48 105 / 5%);
       }
+      section.features .thumb {
+        text-align: center;
+        padding: 50px 0;
+      }
+      section.features .thumb img {
+        width: 50px;
+      }
       section.features .item:hover {
         transform: translateY(-0.5rem);
       }
       section.features p.desc {
         font-size: var(--font-size-base);
         color: var(--color-4);
+        font-weight: 300;
       }
       /* FAQs SECTION */
       section.faqs {
@@ -510,7 +516,8 @@
       }
       /* TESTIMONIAL SECTION */
       section.testimonial {
-        padding: 0 100px;
+        background-color: #F8F8FC;
+        padding: 50px 100px;
       }
       section.testimonial h2 {
         color: var(--color-1);
@@ -541,10 +548,17 @@
       }
       /* CUSTOMER PRIVACY SECTION */
       section.customer-privacy {
+        margin: 50px 0;
         padding: 0 100px;
+        color: white;
+      }
+      section.customer-privacy .wrapper {
+        background-color: #131D56;
+        border-radius: 12px;
+        padding: 20px 30px;
+        text-align: center;
       }
       section.customer-privacy h2 {
-        color: var(--color-1);
         font-size: var(--font-size-4xl);
         text-align: center;
       }
@@ -743,7 +757,7 @@
       <h2>Features</h2>
       <div class="wrapper">
         <div class="item">
-          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/features-1.png" alt="" /></div>
           <h3 class="feature">Feature A</h3>
           <p class="desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
@@ -753,7 +767,7 @@
           </p>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/features-2.png" alt="" /></div>
           <h3 class="feature">Feature A</h3>
           <p class="desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
@@ -763,7 +777,7 @@
           </p>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/features-3.png" alt="" /></div>
           <h3 class="feature">Feature A</h3>
           <p class="desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
@@ -773,7 +787,7 @@
           </p>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/features-4.png" alt="" /></div>
           <h3 class="feature">Feature A</h3>
           <p class="desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
@@ -783,7 +797,7 @@
           </p>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/features-5.png" alt="" /></div>
           <h3 class="feature">Feature A</h3>
           <p class="desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
@@ -793,7 +807,7 @@
           </p>
         </div>
         <div class="item">
-          <div class="thumb"><img src="/static/placeholder.webp" alt="" /></div>
+          <div class="thumb"><img src="/static/features-6.png" alt="" /></div>
           <h3 class="feature">Feature A</h3>
           <p class="desc">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem itaque
@@ -877,6 +891,12 @@
               vitae! Earum tenetur id alias temporibus enim animi aspernatur
               doloribus inventore.
             </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              ab at eum sed natus quibusdam tenetur quidem. Fugit, obcaecati
+              vitae! Earum tenetur id alias temporibus enim animi aspernatur
+              doloribus inventore.
+            </p>
           </div>
         </div>
         <div class="item">
@@ -945,14 +965,16 @@
       </div>
     </section>
     <section class="customer-privacy">
-      <h2>Customer Privacy</h2>
-      <p>
-        Our customers range from startups to massive Fortune 50 companies and
-        everything in between. Our customers value their privacy, and we expect
-        you would too. They trust us with their privacy and as a result, we
-        don’t publicly publish our customer names and logos anywhere.
-      </p>
-      <p><strong>We promise you your privacy and guard it fiercely</strong></p>
+      <div class="wrapper">
+        <h2>Customer Privacy</h2>
+        <p>
+          Our customers range from startups to massive Fortune 50 companies and
+          everything in between. Our customers value their privacy, and we expect
+          you would too. They trust us with their privacy and as a result, we
+          don’t publicly publish our customer names and logos anywhere.
+        </p>
+        <p><strong>We promise you your privacy and guard it fiercely</strong></p>
+      </div>
     </section>
     <section class="who-are-we">
       <h1>Who are we?</h1>

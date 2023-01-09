@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- General css -->
+    <style>
+      body {
+        margin: 0;
+        font-family: "Lexend Deca", sans-serif;
+      }
+      img {
+        width: 100%;
+      }
+      section.search-bar {
+        margin-top: 50px;
+      }
+      section.search-bar input {
+        width: 400px;
+        height: 50px;
+        padding: 0 60px 0 20px;
+        border-radius: 30px;
+        border: none;
+        background-color: white;
+        border-radius: 25px;
+        -webkit-box-shadow: 0px 10px 38px 0px rgb(0 0 0 / 10%);
+        -moz-box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.1);
+        box-shadow: 0px 10px 38px 0px rgb(0 0 0 / 10%);
+      }
+
+      section.search-bar svg {
+        width: 24px;
+        height: 24px;
+        fill: #0066cc;
+        background-color: #2222;
+        border-radius: 50%;
+        padding: 10px;
+        position: relative;
+        top: 18px;
+        left: -55px;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+    }
+      section.search-bar svg:hover {
+        background-color: #0066cc;
+        fill: white;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="search-bar">
+      <form action="" class="search-form" name="form1">
+        <input type="text" class="s" name="s" placeholder="Search..." />
+        <svg onclick="form1.submit()" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+        </svg>
+        </form>
+    </section>
+
+  </body>
+</html>

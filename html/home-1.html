@@ -5,9 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <!-- General css -->
     <style>
       body {
@@ -18,7 +21,7 @@
         width: 100%;
       }
     </style>
-        <!-- Assign variable -->
+    <!-- Assign variable -->
     <style>
       :root {
         --phone-breakpoint: 450px;
@@ -368,7 +371,50 @@
         width: 100%;
         height: auto;
       }
+      /* SEARCH BAR SECTION */
+      section.search-bar {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        padding: 0 100px;
+      }
+      section.search-bar h2 {
+        color: var(--color-1);
+        font-size: var(--font-size-4xl);
+        text-align: center;
+      }
+      section.search-bar form {
+        text-align: center;
+      }
+      section.search-bar input {
+        width: 400px;
+        height: 50px;
+        padding: 0 60px 0 20px;
+        border-radius: 30px;
+        border: none;
+        background-color: white;
+        border-radius: 25px;
+        -webkit-box-shadow: 0px 10px 38px 0px rgb(0 0 0 / 10%);
+        -moz-box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.1);
+        box-shadow: 0px 10px 38px 0px rgb(0 0 0 / 10%);
+      }
 
+      section.search-bar svg {
+        width: 24px;
+        height: 24px;
+        fill: #0066cc;
+        background-color: #2222;
+        border-radius: 50%;
+        padding: 10px;
+        position: relative;
+        top: 18px;
+        left: -55px;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+    }
+      section.search-bar svg:hover {
+        background-color: #0066cc;
+        fill: white;
+      }
       /* ABOUT US SECTION */
       section.about-us {
         padding: 50px 100px 200px 100px;
@@ -503,7 +549,7 @@
         padding-left: 70px;
       }
       section.faqs .item.active {
-        background-color: #F7F7FD;
+        background-color: #f7f7fd;
         border: none;
       }
       section.faqs .item.active .question {
@@ -516,7 +562,7 @@
       }
       /* TESTIMONIAL SECTION */
       section.testimonial {
-        background-color: #F8F8FC;
+        background-color: #f8f8fc;
         padding: 50px 100px;
       }
       section.testimonial h2 {
@@ -553,7 +599,7 @@
         color: white;
       }
       section.customer-privacy .wrapper {
-        background-color: #131D56;
+        background-color: #131d56;
         border-radius: 12px;
         padding: 20px 30px;
         text-align: center;
@@ -565,6 +611,7 @@
       /* WHO WE ARE SECTION */
       section.who-are-we {
         padding: 0 100px;
+        margin-top: 50px;
       }
       section.who-are-we .team-members {
         display: grid;
@@ -576,23 +623,91 @@
         font-size: var(--font-size-4xl);
         text-align: center;
       }
+      section.who-are-we .member {
+        text-align: center;
+      }
+
+      section.who-are-we img {
+        border-radius: 12px;
+      }
+      section.who-are-we h3 {
+        font-size: var(--font-size-lg);
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+      section.who-are-we .member-role {
+        font-size: var(--font-size-base);
+        font-weight: 300;
+      }
+      section.who-are-we .member-info {
+        font-size: var(--font-size-base);
+        font-weight: 300;
+        text-align: justify;
+        padding: 0 20px;
+      }
       /* CONTACT US SECTION */
       section.contact-us {
-        padding: 0 100px;
+        margin-top: 50px;
+        text-align: center;
+        color: white;
+        background-color: var(--color-2);
+        padding-top: 20px;
+        padding-bottom: 60px;
       }
       section.contact-us h2 {
-        color: var(--color-1);
+        color: white;
         font-size: var(--font-size-4xl);
         text-align: center;
       }
+      section.contact-us button {
+        padding: 20px 40px 20px 40px;
+        background-color: var(--color-1);
+        border: none;
+        border-radius: 12px;
+        color: white;
+        font-size: var(--font-size-md);
+        font-weight: bold;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+      }
+      section.contact-us button:hover {
+        background-color: white;
+        color: var(--color-1);
+      }
+      section.contact-us button:active {
+        transform: translateY(-10px);
+      }
       /* TRY IT NOW SECTION */
       section.try-it-now {
-        padding: 0 100px;
+        max-width: 1200px;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 50px;
       }
       section.try-it-now h2 {
         color: var(--color-1);
         font-size: var(--font-size-4xl);
         text-align: center;
+      }
+      section.try-it-now form {
+        display: flex;
+        justify-content: center;
+      }
+      section.try-it-now form input {
+        width: 500px;
+        border-right: none;
+      }
+      section.try-it-now form input:focus-visible {
+        outline: 2px solid var(--color-1);
+      }
+      section.try-it-now form button {
+        padding: 10px 10px 0 10px;
+        background-color: var(--color-1);
+        color: white;
+        border-right: none;
+      }
+      section.try-it-now button svg {
+        fill: white;
       }
     </style>
   </head>
@@ -723,6 +838,21 @@
       <div class="decoration">
         <img src="/static/placeholder.webp" alt="" />
       </div>
+    </section>
+    <section class="search-bar">
+      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
+      <form action="" class="search-form" name="form1" id="form1">
+        <input type="text" class="s" name="s" placeholder="Search..." />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+          ></path>
+        </svg>
+      </form>
     </section>
     <section class="about-us">
       <h2>About Us</h2>
@@ -969,15 +1099,18 @@
         <h2>Customer Privacy</h2>
         <p>
           Our customers range from startups to massive Fortune 50 companies and
-          everything in between. Our customers value their privacy, and we expect
-          you would too. They trust us with their privacy and as a result, we
-          don’t publicly publish our customer names and logos anywhere.
+          everything in between. Our customers value their privacy, and we
+          expect you would too. They trust us with their privacy and as a
+          result, we don’t publicly publish our customer names and logos
+          anywhere.
         </p>
-        <p><strong>We promise you your privacy and guard it fiercely</strong></p>
+        <p>
+          <strong>We promise you your privacy and guard it fiercely</strong>
+        </p>
       </div>
     </section>
     <section class="who-are-we">
-      <h1>Who are we?</h1>
+      <h2>Who are we?</h2>
       <div class="team-members">
         <div class="member">
           <div class="member-image">
@@ -1102,7 +1235,7 @@
         const searchPopup = document.querySelector(
           "section.site-header .search-popup"
         );
-        
+
         toggleSearchButton.addEventListener("click", () => {
           searchPopup.classList.toggle("visible");
         });
@@ -1134,10 +1267,21 @@
           };
         }
 
-        const faqItems = document.querySelectorAll('section.faqs .item');
+        const featureSearchForm = document.querySelector('#form1');
+        const featureSearchFormSVG = document.querySelector('#form1 svg');
+        featureSearchFormSVG.addEventListener('click', function (form_event) {
+          console.log('ok');
+          let form_value = featureSearchForm.querySelector(".s").value;
+          form_value = encodeURI(form_value).replaceAll("%20", "-");
+          form_event = form_event || window.event;
+          form_event.preventDefault();
+          window.location.href = "/s/" + form_value;
+        });
+
+        const faqItems = document.querySelectorAll("section.faqs .item");
         for (const faqItem of faqItems) {
-          faqItem.addEventListener('click', ()=>{
-            faqItem.classList.toggle('active');
+          faqItem.addEventListener("click", () => {
+            faqItem.classList.toggle("active");
           });
         }
       });

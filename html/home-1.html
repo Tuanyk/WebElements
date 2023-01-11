@@ -24,9 +24,6 @@
     <!-- Assign variable -->
     <style>
       :root {
-        --phone-breakpoint: 450px;
-        --tablet-breakpoint: 800px;
-        --desktop-breakpoint: 1200px;
         --color-1: #1e266d;
         --color-2: #1276ff;
         --color-3: #f8f8fc;
@@ -337,6 +334,127 @@
         background-color: #f4f4f4;
         cursor: pointer;
       }
+      section.site-header .toggle-wrapper .toggle-btn {
+        display: none;
+      }
+      @media (max-width: 1200px) {
+        section.site-header {
+          background-color: white;
+        }
+        section.site-header .header-logo img.logo-main {
+          display: none;
+        }
+        section.site-header .header-logo img.logo-dark {
+          display: block;
+        }
+        section.site-header .wrapper .header-menu {
+          position: absolute;
+          flex-direction: column;
+          align-items: flex-start;
+          -webkit-transform: translateX(110%);
+          -moz-transform: translateX(110%);
+          -ms-transform: translateX(110%);
+          transform: translateX(110%);
+          opacity: 0;
+          visibility: hidden;
+          -webkit-animation: fade-left 0.4s backwards linear;
+          animation: fade-left 0.4s backwards linear;
+          -webkit-transition: 0.3s all linear;
+          transition: 0.3s all linear;
+          width: 0;
+          right: -100%;
+        }
+        section.site-header .wrapper .cta {
+          display: none;
+        }
+        section.site-header .toggle-wrapper .toggle-btn {
+          position: relative;
+          width: 26px;
+          height: 26px;
+          top: 6px;
+          -webkit-transition: all 0.4s ease-in-out;
+          transition: all 0.4s ease-in-out;
+          display: block;
+          cursor: pointer;
+        }
+        section.site-header .toggle-wrapper .toggle-btn span {
+          position: absolute;
+          height: 3px;
+          border-radius: 30px;
+          width: 100%;
+          background-color: #293c67;
+          -webkit-transition: -webkit-transform 0.4s ease-in-out,
+            opacity 0.4s ease-in-out;
+          transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+          z-index: 11;
+        }
+        section.site-header .toggle-wrapper .toggle-btn span:nth-of-type(1) {
+          top: 0;
+        }
+        section.site-header .toggle-wrapper .toggle-btn span:nth-of-type(2),
+        section.site-header .toggle-wrapper .toggle-btn span:nth-of-type(3) {
+          top: 7px;
+        }
+        section.site-header .toggle-wrapper .toggle-btn span:nth-of-type(4) {
+          top: 14px;
+        }
+        section.site-header .wrapper .header-menu.activate {
+          position: absolute;
+          visibility: visible;
+          width: 100%;
+          height: 100vh;
+          top: 70px;
+          right: 0px;
+          background-color: white;
+          -webkit-animation: fade-left 0.4s forwards linear;
+          animation: fade-left 0.4s forwards linear;
+          -webkit-transition: 0.3s all linear;
+          transition: 0.3s all linear;
+          -webkit-transform: translateX(0px);
+          -moz-transform: translateX(0px);
+          -ms-transform: translateX(0px);
+          transform: translateX(0px);
+          opacity: 1;
+        }
+        section.site-header .wrapper .header-menu.activate .menu-item {
+          margin-top: 20px;
+          margin-left: 40px;
+          margin-bottom: 20px;
+        }
+        section.site-header .wrapper .header-menu.activate a {
+          color: var(--color-4);
+        }
+        section.site-header
+          .wrapper
+          .toggle-wrapper.activate
+          span:nth-of-type(1),
+        section.site-header
+          .wrapper
+          .toggle-wrapper.activate
+          span:nth-of-type(4) {
+          opacity: 0;
+        }
+        section.site-header
+          .wrapper
+          .toggle-wrapper.activate
+          span:nth-of-type(2) {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+          background-color: #2a1e5c;
+        }
+        section.site-header
+          .wrapper
+          .toggle-wrapper.activate
+          span:nth-of-type(3) {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          background-color: #2a1e5c;
+        }
+      }
     </style>
     <!-- CSS Sections of Main content Home -->
     <style>
@@ -351,10 +469,10 @@
         justify-content: center;
         padding-top: 100px;
       }
-      section.hero-section div.content {
+      section.hero-section .content {
         width: 40%;
       }
-      section.hero-section div.decoration {
+      section.hero-section .decoration {
         width: 35%;
         display: flex;
         align-items: center;
@@ -370,6 +488,16 @@
       section.hero-section img {
         width: 100%;
         height: auto;
+      }
+
+      @media (max-width: 800px) {
+        section.hero-section .content {
+          width: 100%;
+          padding: 0 20px;
+        }
+        section.hero-section .decoration {
+          display: none;
+        }
       }
       /* SEARCH BAR SECTION */
       section.search-bar {
@@ -394,7 +522,7 @@
         background-color: white;
         border-radius: 25px;
         -webkit-box-shadow: 0px 10px 38px 0px rgb(0 0 0 / 10%);
-        -moz-box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0px 10px 38px 0px rgba(0, 0, 0, 0.1);
         box-shadow: 0px 10px 38px 0px rgb(0 0 0 / 10%);
       }
 
@@ -410,10 +538,18 @@
         left: -55px;
         -webkit-transition: all 0.2s linear;
         transition: all 0.2s linear;
-    }
+      }
       section.search-bar svg:hover {
         background-color: #0066cc;
         fill: white;
+      }
+
+      @media (max-width: 800px) {
+        section.search-bar {
+          margin-top: 0;
+          margin-bottom: 20px;
+          padding: 0 20px;
+        }
       }
       /* ABOUT US SECTION */
       section.about-us {
@@ -431,7 +567,11 @@
         font-size: var(--font-size-base);
         line-height: 1.6;
       }
-
+      @media (max-width: 800px) {
+        section.about-us {
+          padding: 50px 50px 200px 50px;
+        }
+      }
       /* DATAINFO SECTION */
       section.data-info {
         margin-bottom: 60px;
@@ -459,7 +599,18 @@
         color: var(--color-1);
         margin-top: 10px;
       }
-
+      @media (max-width: 1200px) {
+        section.data-info .wrapper {
+          grid-template-columns: 1fr 1fr;
+          margin: -130px 0 0px;
+        }
+      }
+      @media (max-width: 600px) {
+        section.data-info .wrapper {
+          grid-template-columns: 1fr;
+          margin: -130px 0 0px;
+        }
+      }
       /* FEATURES SECTION */
       section.features {
         background-color: var(--color-3);
@@ -512,6 +663,32 @@
         color: var(--color-4);
         font-weight: 300;
       }
+
+      @media (max-width: 1200px) {
+        section.features {
+          padding: 50px;
+        }
+      }
+      @media (max-width: 1000px) {
+        section.features {
+          padding: 50px 20px;
+        }
+        section.features .wrapper {
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 800px) {
+        section.features .wrapper {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 500px) {
+        section.features .wrapper {
+          grid-template-columns: 1fr;
+        }
+      }
       /* FAQs SECTION */
       section.faqs {
         padding: 50px 100px;
@@ -560,6 +737,17 @@
       section.faqs .item.active .answer {
         display: block;
       }
+
+      @media (max-width: 1000px) {
+        section.faqs {
+          padding: 20px 50px 50px 50px;
+        }
+      }
+      @media (max-width: 650px) {
+        section.faqs .answer {
+          padding-left: 30px;
+        }
+      }
       /* TESTIMONIAL SECTION */
       section.testimonial {
         background-color: #f8f8fc;
@@ -580,6 +768,27 @@
         font-size: var(--font-size-md);
       }
 
+      @media (max-width:1000px) {
+        section.testimonial {
+          padding: 50px;
+        }
+      }
+      @media (max-width:800px) {
+        section.testimonial .wrapper {
+          grid-template-columns: 1fr 1fr;
+        }
+        section.testimonial {
+          padding: 50px 30px;
+        }
+      }
+      @media (max-width:500px) {
+        section.testimonial .wrapper {
+          grid-template-columns: 1fr;
+        }
+        section.testimonial {
+          padding: 50px 20px;
+        }
+      }
       /* CUSTOMERS SECTION */
       section.customers {
         padding: 0 100px;
@@ -589,8 +798,24 @@
         font-size: var(--font-size-4xl);
         text-align: center;
       }
+      section.customers .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
       section.customers img {
         width: 200px;
+        margin: 10px 0;
+      }
+      @media (max-width:1000px) {
+        section.customers {
+          padding: 0 50px;
+        }
+      }
+      @media (max-width:600px) {
+        section.customers {
+          padding: 0 20px;
+        }
       }
       /* CUSTOMER PRIVACY SECTION */
       section.customer-privacy {
@@ -607,6 +832,16 @@
       section.customer-privacy h2 {
         font-size: var(--font-size-4xl);
         text-align: center;
+      }
+      @media (max-width:1000px) {
+        section.customer-privacy {
+          padding: 0 50px;
+        }
+      }
+      @media (max-width:800px) {
+        section.customer-privacy {
+          padding: 0 20px;
+        }
       }
       /* WHO WE ARE SECTION */
       section.who-are-we {
@@ -644,6 +879,25 @@
         font-weight: 300;
         text-align: justify;
         padding: 0 20px;
+      }
+
+      @media (max-width: 1000px) {
+        section.who-are-we {
+          padding: 0 50px;
+        }
+        section.who-are-we .team-members {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width:800px) {
+        section.who-are-we {
+          padding: 0 20px;
+        }
+      }
+      @media (max-width:500px) {
+        section.who-are-we .team-members {
+          grid-template-columns: 1fr;
+        }
       }
       /* CONTACT US SECTION */
       section.contact-us {
@@ -816,6 +1070,11 @@
         <div class="cta">
           <a href="#" class="button-primary"><span>Contact Sales</span></a>
         </div>
+        <div class="toggle-wrapper">
+          <div class="toggle-btn">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
       </div>
       <div class="progress-container" id="progress-container">
         <div style="transform: translateX(-100%)" class="progress-bar"></div>
@@ -843,10 +1102,7 @@
       <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
       <form action="" class="search-form" name="form1" id="form1">
         <input type="text" class="s" name="s" placeholder="Search..." />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M0 0h24v24H0z" fill="none"></path>
           <path
             d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
@@ -1256,6 +1512,17 @@
           }
         });
 
+        const toggleMenuMobile = document.querySelector(
+          "section.site-header .wrapper .toggle-wrapper"
+        );
+        const navMenu = document.querySelector(
+          "section.site-header .wrapper nav.header-menu"
+        );
+        toggleMenuMobile.addEventListener("click", () => {
+          navMenu.classList.toggle("activate");
+          toggleMenuMobile.classList.toggle("activate");
+        });
+
         const searchForms = document.querySelectorAll("form.search-form");
         for (const searchForm of searchForms) {
           searchForm.onsubmit = function (form_event) {
@@ -1267,10 +1534,10 @@
           };
         }
 
-        const featureSearchForm = document.querySelector('#form1');
-        const featureSearchFormSVG = document.querySelector('#form1 svg');
-        featureSearchFormSVG.addEventListener('click', function (form_event) {
-          console.log('ok');
+        const featureSearchForm = document.querySelector("#form1");
+        const featureSearchFormSVG = document.querySelector("#form1 svg");
+        featureSearchFormSVG.addEventListener("click", function (form_event) {
+          console.log("ok");
           let form_value = featureSearchForm.querySelector(".s").value;
           form_value = encodeURI(form_value).replaceAll("%20", "-");
           form_event = form_event || window.event;
